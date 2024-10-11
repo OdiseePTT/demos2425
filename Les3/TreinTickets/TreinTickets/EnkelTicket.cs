@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace TreinTickets
 
         public bool ControleerGeldigheid(string[] route)
         {
-            throw new NotImplementedException();
+            return Datum == DateTime.Today && route.Contains(VanLocatie) && route.Contains(NaarLocatie);
         }
     }
 }

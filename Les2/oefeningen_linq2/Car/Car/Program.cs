@@ -1,5 +1,6 @@
 ﻿using Spectre.Console;
 using System.Linq;
+using System.Xml;
 
 namespace Car
 {
@@ -8,6 +9,12 @@ namespace Car
         static void Main(string[] args)
         {
             List<Car> cars = GetListOfCars();
+
+            cars.Sort();
+            MyList list = new MyList();
+
+            list.Where(x => x>10);
+
             CarOperations carOps = new CarOperations(cars);
 
             PrintRule("Alle auto's");

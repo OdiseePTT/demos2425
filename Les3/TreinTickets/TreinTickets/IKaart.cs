@@ -8,7 +8,7 @@ namespace TreinTickets
 {
     internal interface IKaart
     {
-        string Id { get; }
+        //string Id { get; }
         bool ControleerGeldigheid(string[] route);
     }
 }

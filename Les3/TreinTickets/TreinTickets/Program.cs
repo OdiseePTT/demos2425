@@ -4,12 +4,17 @@
     {
         static void Main(string[] args)
         {
-            IKaart kaart = new EnkelTicket(DateTime.Today,"Brussel", "Leuven", "12345");
-            EnkelTicket enkelTicket = new EnkelTicket(DateTime.Today, "Brussel", "Leuven", "12345");
+            Conducteur conducteur = new Conducteur(["Brussel-Zuid", "Brussel-Centraal", "Brussel-Noord"]);
 
+            EnkelTicket enkel = new EnkelTicket(DateTime.Today, "Brussel-Zuid", "Brussel-Noord", "12345");
+            Multipass multi = new Multipass("Brussel-Noord", "Brussel-Centraal", "1234");
+            multi.VoegRitToe("Brussel-Centraal");
 
-            Console.WriteLine("demo");
+            Abonnement abonnement = new Abonnement(DateTime.Today.AddDays(-100), DateTime.Today.AddDays(100), "Gent", "Brugge", "123456");
 
+            Console.WriteLine(conducteur.CheckKaart(enkel));
+            Console.WriteLine(conducteur.CheckKaart(multi));
+            Console.WriteLine(conducteur.CheckKaart(abonnement));
 
         }
     }
