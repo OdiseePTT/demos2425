@@ -1,4 +1,5 @@
 ﻿using Absence.Tests.TestDoubles;
+using NUnit.Framework.Legacy;
 
 namespace Absence.Tests
 {
@@ -145,5 +146,40 @@ namespace Absence.Tests
                 }));
 
         }
+
+        [Test]
+        public void AddNewStudent_WithNewStudentAndNoExistingAbsenceChecks_DoesntCallAddStudentAsAbsentToDay()
+        {
+            // Arrange
+            IAbsenceTracker absenceTracker = new AbsenceTrackerMock2();
+            AbsenceHelper sut = new AbsenceHelper(absenceTracker);
+            Student student = new Student("1", "John", "Doe"); // = dummie maakt niet uit welke data.
+
+            // Act
+            sut.AddNewStudent(student);
+
+            // Assert
+            Assert.Pass();
+
+        }
+
+
+        [Test]
+        public void RemoveStudent_WithNonExistingStudentAndAbsenceChecksAvailable_DoesntCallRemoveMethods()
+        {
+            // Arrange
+            IAbsenceTracker absenceTracker = new AbsenceTrackerMock3();
+            AbsenceHelper sut = new AbsenceHelper(absenceTracker);
+            Student student = new Student("1", "John", "Doe"); // = dummie maakt niet uit welke data.
+            
+            // Act
+            sut.RemoveStudent(student);
+
+            // Assert
+            Assert.Pass();
+        }
+
+
+
     }
 }
