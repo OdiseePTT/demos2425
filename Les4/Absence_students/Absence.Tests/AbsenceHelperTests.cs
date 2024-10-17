@@ -1,5 +1,4 @@
 ﻿using Absence.Tests.TestDoubles;
-using NUnit.Framework.Legacy;
 
 namespace Absence.Tests
 {
@@ -171,12 +170,44 @@ namespace Absence.Tests
             IAbsenceTracker absenceTracker = new AbsenceTrackerMock3();
             AbsenceHelper sut = new AbsenceHelper(absenceTracker);
             Student student = new Student("1", "John", "Doe"); // = dummie maakt niet uit welke data.
-            
+
             // Act
             sut.RemoveStudent(student);
 
             // Assert
             Assert.Pass();
+        }
+
+        [Test]
+        public void CountPercentageOfPresentStudentsOnDay_WithEverybodyPresent_Returns1()
+        {
+
+            // Arrange
+            IAbsenceTracker stub = new AbsenceTrackerStub2();
+            AbsenceHelper sut = new AbsenceHelper(stub);
+
+            // Act
+            double result = sut.CountPercentageOfPresentStudentsOnDay(new DateOnly(2024, 1, 1));
+
+            // Assert
+            Assert.That(result, Is.EqualTo(1));
+
+        }
+
+        [Test]
+        public void CountPercentageOfPresentStudentsOnDay_ForDateWithNoAbsenceCheck_Returns0()
+        {
+
+            // Arrange
+            IAbsenceTracker stub = new AbsenceTrackerStub3();
+            AbsenceHelper sut = new AbsenceHelper(stub);
+
+            // Act
+            double result = sut.CountPercentageOfPresentStudentsOnDay(DateOnly.MaxValue);
+
+            // Assert
+            Assert.That(result, Is.EqualTo(0));
+
         }
 
 
