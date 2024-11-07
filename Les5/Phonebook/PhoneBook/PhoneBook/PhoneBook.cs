@@ -5,7 +5,7 @@ using System.Text.Json;
 
 namespace PhoneBook
 {
-    internal class PhoneBook : IPhoneBook
+    public class PhoneBook : IPhoneBook
     {
         string _url;
         private List<Contact> _contacts = new List<Contact>();
@@ -23,7 +23,7 @@ namespace PhoneBook
         public void AddContact(Contact contact)
         {
             _contacts.Add(contact);
-            SaveContacts(); // Save the updated phonebook to the CSV file.
+            SaveContacts(); // Save the updated phonebook to the JSON file.
         }
 
         public void RemoveContact(Contact contact)
