@@ -12,7 +12,9 @@ namespace HigherLowerGame.Tests
             // Arrange
             IRandom random = Substitute.For<IRandom>();
             random.Next(default).ReturnsForAnyArgs(5);
-            random.Next(Arg.Any<int>()).Returns(5);
+            
+            // random.Next(Arg.Any<int>()).Returns(5); zelde als lijn hierboven.
+            
             HigherLowerApp sut = new HigherLowerApp(random,10);
 
             // Act
