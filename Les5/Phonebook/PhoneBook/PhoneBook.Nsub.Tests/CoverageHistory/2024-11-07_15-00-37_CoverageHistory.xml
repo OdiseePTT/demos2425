@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2024-11-07_15-00-37" tag="">
+  <assembly name="PhoneBook">
+    <class name="PhoneBook.Contact" coveredlines="22" coverablelines="22" totallines="38" coveredbranches="12" totalbranches="12" coveredcodeelements="8" totalcodeelements="8" />
+    <class name="PhoneBook.PhoneBook" coveredlines="0" coverablelines="35" totallines="65" coveredbranches="0" totalbranches="2" coveredcodeelements="0" totalcodeelements="7" />
+    <class name="PhoneBook.PhoneBookOperations" coveredlines="44" coverablelines="76" totallines="145" coveredbranches="6" totalbranches="12" coveredcodeelements="11" totalcodeelements="16" />
+    <class name="PhoneBook.Program" coveredlines="0" coverablelines="16" totallines="28" coveredbranches="0" totalbranches="4" coveredcodeelements="0" totalcodeelements="1" />
+  </assembly>
+</coverage>

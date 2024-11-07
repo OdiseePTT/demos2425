@@ -1,11 +1,14 @@
 ﻿using Spectre.Console;
 
-namespace HigherLowerGame;
+namespace Person;
 public class Program
 {
     public static void Main()
     {
         PersonRepository personRepository = new PersonRepository();
-        personRepository.AddPerson(new Person("John", "Doe", DateTime.Today));
+        foreach (Person item in personRepository.GetAllPersons()) 
+        {
+            Console.WriteLine(item.FirstName);
+        }
     }
 }

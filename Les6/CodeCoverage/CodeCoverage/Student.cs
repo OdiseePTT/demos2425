@@ -13,6 +13,12 @@
         public string Name { get; set; }
         public int Score { get; set; }
 
+        public Student(string name, int score)
+        {
+            Name = name;
+            Score = score;
+        }
+
         public bool IsGeslaagd()
         {
             if (Score >= 10)
