@@ -53,6 +53,7 @@ namespace Person.Tests
                 .Build<Person>()
                 .With(p => p.BirthDate, new DateTime(1995,1,1))
                 .CreateMany<Person>(10).ToList();
+
             SeedDatabaseWithData(context, people);
 
             PersonRepository sut = new PersonRepository(context);

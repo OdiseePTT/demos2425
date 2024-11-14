@@ -40,5 +40,7 @@ namespace Yathzee.Tests
             Assert.That(result, Is.EqualTo(5));
 
         }
+
+     
     }
 }
